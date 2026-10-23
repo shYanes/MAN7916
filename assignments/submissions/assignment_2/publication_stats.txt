@@ -1,0 +1,42 @@
+ANOVA: Citation counts by journal
+# A tibble: 2 × 6
+  term         df     sumsq  meansq statistic   p.value
+  <chr>     <dbl>     <dbl>   <dbl>     <dbl>     <dbl>
+1 journal       4  2552719. 638180.      55.1  1.55e-45
+2 Residuals  4975 57612705.  11580.      NA   NA       
+
+Tukey pairwise comparisons
+# A tibble: 10 × 7
+   term    contrast                                                         null.value estimate conf.low conf.high adj.p.value
+   <chr>   <chr>                                                                 <dbl>    <dbl>    <dbl>     <dbl>       <dbl>
+ 1 journal Academy of Management Review-Academy of Management Journal                0   -27.0     -41.9    -12.2   0.00000734
+ 2 journal Journal of Applied Psychology-Academy of Management Journal               0   -50.7     -62.6    -38.8   0         
+ 3 journal Journal of Organizational Behavior-Academy of Management Journal          0   -49.3     -62.5    -36.0   0         
+ 4 journal Personnel Psychology-Academy of Management Journal                        0   -71.9     -86.9    -56.9   0         
+ 5 journal Journal of Applied Psychology-Academy of Management Review                0   -23.7     -37.1    -10.2   0.0000154 
+ 6 journal Journal of Organizational Behavior-Academy of Management Review           0   -22.2     -36.9     -7.59  0.000335  
+ 7 journal Personnel Psychology-Academy of Management Review                         0   -44.8     -61.1    -28.6   0         
+ 8 journal Journal of Organizational Behavior-Journal of Applied Psychology          0     1.44    -10.2     13.1   0.997     
+ 9 journal Personnel Psychology-Journal of Applied Psychology                        0   -21.2     -34.7     -7.60  0.000204  
+10 journal Personnel Psychology-Journal of Organizational Behavior                   0   -22.6     -37.4     -7.84  0.000289  
+
+Overall correlation: Publication year and citation count
+# A tibble: 1 × 9
+      n estimate statistic   p.value parameter conf.low conf.high method                               alternative
+  <int>    <dbl>     <dbl>     <dbl>     <int>    <dbl>     <dbl> <chr>                                <chr>      
+1  4980   -0.365     -27.7 3.64e-157      4978   -0.389    -0.341 Pearson's product-moment correlation two.sided  
+
+Correlations by journal
+# A tibble: 5 × 10
+  journal                                n estimate statistic  p.value parameter conf.low conf.high method                               alternative
+  <fct>                              <int>    <dbl>     <dbl>    <dbl>     <int>    <dbl>     <dbl> <chr>                                <chr>      
+1 Academy of Management Journal        939   -0.483    -16.9  4.40e-56       937   -0.531    -0.433 Pearson's product-moment correlation two.sided  
+2 Academy of Management Review         664   -0.313     -8.47 1.62e-16       662   -0.380    -0.242 Pearson's product-moment correlation two.sided  
+3 Journal of Applied Psychology       1710   -0.429    -19.6  1.67e-77      1708   -0.467    -0.390 Pearson's product-moment correlation two.sided  
+4 Journal of Organizational Behavior  1022   -0.396    -13.8  1.27e-39      1020   -0.446    -0.343 Pearson's product-moment correlation two.sided  
+5 Personnel Psychology                 645   -0.180     -4.65 4.00e- 6       643   -0.254    -0.105 Pearson's product-moment correlation two.sided  
+
+
+A one-way analysis of variance examined differences in citation counts across five journals (N = 4,980). Mean citation counts differed significantly by journal, F(4, 4975) = 55.1, p < .001, η² = .042. Journal membership accounted for approximately 4.2% of the variance in citation counts.
+Tukey-adjusted post hoc comparisons indicated that articles in Academy of Management Journal received significantly more citations than articles in each of the other four journals. Articles in Academy of Management Review received significantly more citations than those in Journal of Applied Psychology, Journal of Organizational Behavior, and Personnel Psychology. Both Journal of Applied Psychology and Journal of Organizational Behavior had significantly higher citation counts than Personnel Psychology. All these comparisons were significant at p < .001. Citation counts did not differ significantly between Journal of Applied Psychology and Journal of Organizational Behavior, mean difference = 1.44, 95% CI [−10.20, 13.10], p = .997.
+Across all articles, publication year was negatively correlated with citation count, r(4978) = −.37, 95% CI [−.39, −.34], p < .001.
